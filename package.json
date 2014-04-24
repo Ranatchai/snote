@@ -1,20 +1,13 @@
 {
-  "name": "S-Note",
+  "name": "application-name",
   "version": "0.0.1",
-  "description": "Note Application",
+  "private": true,
   "scripts": {
-    "test": "grunt test"
+    "start": "(node app.js &) && grunt dev watch"
   },
-  "author": "Ranatchai Chernbamrung",
-  "license": "BSD-2-Clause",
-  "devDependencies": {
-    "grunt-contrib-less": "~0.9.0",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-copy-to": "0.0.10",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-webpack": "~1.0.5",
-    "jshint-loader": "~0.6.0",
-    "jsx-loader": "~0.9.0",
-    "jshint": "~2.5.0"
+  "dependencies": {
+    "express": "3.4.7",
+    "ejs": "*",
+    "mongoose": "~3.8.8"
   }
 }

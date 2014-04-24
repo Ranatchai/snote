@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 		webpack: {
 			dev: {
 				cache: true,
-				entry: __dirname + '/src/main.js',
+				entry: __dirname + '/public/src/main.js',
 				output: {
 					path: '.build/js/',
 					// publicPath: '/js/',
@@ -32,15 +32,15 @@ module.exports = function(grunt) {
 		copyto: {
 			dev: {
 				files: [{
-					cwd: 'images',
+					cwd: 'public/images',
 					src: ['**.png', '**.gif', '**.jpg'],
 					dest: '.build/images/'
 				}, {
-					cwd: 'styles',
+					cwd: 'public/styles',
 					src: ['**.css'],
 					dest: '.build/styles/'
 				}, {
-					cwd: 'vendor',
+					cwd: 'public/vendor',
 					src: ['**.js'],
 					dest: '.build/vendor/'
 				}]
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
 					sourceMap: true
 				},
 				files: {
-					'.build/styles/less-style.css': 'styles/*.less'
+					'.build/styles/less-style.css': 'public/styles/*.less'
 				}
 			}
 		},
@@ -65,19 +65,19 @@ module.exports = function(grunt) {
         tasks: ["webpack"],
         options: {
           spawn: false,
-          livereload: 3000
+          livereload: 3003
         }
       },
       vendor: {
         files: [
-          'images/**',
-          'vendor/*.js',
-          'styles/*.css'
+          'public/images/**',
+          'public/vendor/*.js',
+          'public/styles/*.css'
         ],
         tasks: ['copyto']
       },
       less: {
-      	files: ['styles/*.less'],
+      	files: ['public/styles/*.less'],
       	tasks: ['less']
       }
 		}
